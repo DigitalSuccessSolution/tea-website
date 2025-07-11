@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Haven - Premium Tea Delivered to Your Doorstep</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4F7942',secondary:'#8B5A2B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .custom-checkbox:checked {
+            background-color: #4F7942;
+            border-color: #4F7942;
+        }
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="font-['Pacifico'] text-3xl text-primary">logo</a>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Home</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">About Us</a>
+                <div class="relative group">
+                    <button class="text-gray-800 hover:text-primary font-medium flex items-center !rounded-button whitespace-nowrap">
+                        Categories
+                        <div class="w-5 h-5 flex items-center justify-center ml-1">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-gray-800">Black Tea</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-gray-800">Green Tea</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-gray-800">Flavored Tea</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-gray-800">Instant Tea</a>
+                    </div>
+                </div>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Delightful Treats</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Bulk Orders</a>
+            </nav>
+            
+            <!-- Right Side Actions -->
+            <div class="flex items-center space-x-6">
+                <!-- Search -->
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 w-48 rounded-full border border-gray-200 focus:outline-none focus:border-primary text-sm">
+                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                
+                <!-- Account -->
+                <div class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary">
+                    <i class="ri-user-line ri-lg"></i>
+                </div>
+                
+                <!-- Cart -->
+                <div class="relative w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary">
+                    <i class="ri-shopping-cart-line ri-lg"></i>
+                    <span class="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="w-10 h-10 flex items-center justify-center text-gray-700 md:hidden">
+                    <i class="ri-menu-line ri-lg"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-[600px] flex items-center" style="background-image: url('https://public.readdy.ai/ai/img_res/aa611e1f121dd133ca7cd65281aa493a.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="w-full md:w-1/2 space-y-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">Pure Assam Tea, Delivered to Your Doorstep</h1>
+                <p class="text-lg text-gray-700">Experience the rich heritage and exceptional flavor of our premium tea, cultivated with care and delivered fresh to you.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-button font-medium shadow-md transition-all whitespace-nowrap">Shop Now</button>
+                    <button class="bg-white border border-gray-300 hover:border-primary text-gray-800 hover:text-primary px-8 py-3 rounded-button font-medium transition-all whitespace-nowrap">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Strip -->
+    <section class="bg-gray-50 py-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+                        <i class="ri-award-line ri-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-900">60+ Years of Excellence</h3>
+                        <p class="text-sm text-gray-600">Trusted by generations</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+                        <i class="ri-truck-line ri-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-900">PAN India Delivery</h3>
+                        <p class="text-sm text-gray-600">Fast & reliable shipping</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+                        <i class="ri-leaf-line ri-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-900">Premium Tea Quality</h3>
+                        <p class="text-sm text-gray-600">Handpicked & ethically sourced</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Featured Collection</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our most loved teas, carefully selected and crafted to perfection for an exceptional tea experience.</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex justify-center mb-10">
+                <div class="inline-flex bg-gray-100 p-1 rounded-full">
+                    <button class="px-6 py-2 rounded-full bg-primary text-white font-medium whitespace-nowrap">Bestsellers</button>
+                    <button class="px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition-colors whitespace-nowrap">New Arrivals</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://public.readdy.ai/ai/img_res/ba2482189a61bbee11f58a58e6793f4c.jpg" alt="Premium Assam Black Tea" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute bottom-4 right-4">
+                            <button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">4.8 (124)</span>
+                        </div>
+                        <h3 class="font-medium text-gray-900 mb-1">Premium Assam Black Tea</h3>
+                        <p class="text-gray-500 mb-2">100g Loose Leaf</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold text-gray-900">$12.99</span>
+                            <span class="text-sm text-green-600">In Stock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://public.readdy.ai/ai/img_res/5e923aa517ffab3ab1edc7a3495f91d2.jpg" alt="Darjeeling Green Tea" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute bottom-4 right-4">
+                            <button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">5.0 (87)</span>
+                        </div>
+                        <h3 class="font-medium text-gray-900 mb-1">Darjeeling Green Tea</h3>
+                        <p class="text-gray-500 mb-2">75g Loose Leaf</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold text-gray-900">$14.99</span>
+                            <span class="text-sm text-green-600">In Stock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://public.readdy.ai/ai/img_res/6b64437dc98d952407099b2ed7ef7c97.jpg" alt="Masala Chai Blend" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute bottom-4 right-4">
+                            <button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i>
+                            </button>
+                        </div>
+                        <div class="absolute top-3 left-3 bg-primary text-white text-xs px-2 py-1 rounded">Bestseller</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">4.2 (156)</span>
+                        </div>
+                        <h3 class="font-medium text-gray-900 mb-1">Masala Chai Blend</h3>
+                        <p class="text-gray-500 mb-2">150g Loose Leaf</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold text-gray-900">$16.99</span>
+                            <span class="text-sm text-green-600">In Stock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://public.readdy.ai/ai/img_res/c1e509982a4620486f0e33f5283bdf4b.jpg" alt="Luxury Tea Gift Box" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute bottom-4 right-4">
+                            <button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i>
+                            </button>
+                        </div>
+                        <div class="absolute top-3 left-3 bg-amber-500 text-white text-xs px-2 py-1 rounded">New</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">4.7 (42)</span>
+                        </div>
+                        <h3 class="font-medium text-gray-900 mb-1">Luxury Tea Gift Box</h3>
+                        <p class="text-gray-500 mb-2">Assorted 24 Tea Bags</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold text-gray-900">$24.99</span>
+                            <span class="text-sm text-green-600">In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white rounded-button font-medium transition-colors whitespace-nowrap">View All Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://public.readdy.ai/ai/img_res/e85a14002ac1a1fcfd1143e1a22c16be.jpg" alt="Our Tea Heritage" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Tea Heritage</h2>
+                    <p class="text-gray-700 mb-6">Since 1962, we have been dedicated to bringing the finest teas from the lush gardens of Assam and Darjeeling to tea lovers worldwide. Our journey began with a simple passion for quality tea and has evolved into a commitment to excellence in every cup.</p>
+                    <p class="text-gray-700 mb-8">We work directly with tea estates to ensure ethical sourcing and sustainable farming practices, preserving both the environment and the rich tradition of Indian tea cultivation. Every leaf is handpicked at its peak and processed with care to maintain its authentic flavor and aroma.</p>
+                    <button class="px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-button font-medium shadow-md transition-colors whitespace-nowrap">Learn Our Story</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join thousands of satisfied customers who have made our tea a part of their daily ritual.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex text-amber-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6">"I've been a tea enthusiast for years, and this Assam Black Tea is truly exceptional. The flavor is rich and robust, perfect for my morning ritual. The packaging keeps it fresh, and the delivery was prompt."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 mr-4">
+                            <i class="ri-user-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900">Emily Richardson</h4>
+                            <p class="text-sm text-gray-500">London, UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex text-amber-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6">"The Masala Chai Blend is absolutely divine! The perfect balance of spices and tea creates a comforting experience. I've ordered it multiple times and the quality has been consistently excellent. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 mr-4">
+                            <i class="ri-user-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900">Rajiv Mehta</h4>
+                            <p class="text-sm text-gray-500">Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex text-amber-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6">"The Luxury Tea Gift Box was the perfect present for my mother-in-law who is a tea connoisseur. She was impressed by the variety and quality. The packaging is elegant and makes for a wonderful gift. Will definitely purchase again!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 mr-4">
+                            <i class="ri-user-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-500">Toronto, Canada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 relative" style="background-image: url('https://public.readdy.ai/ai/img_res/109316699c4b2862b2b2449210aee670.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-primary/60"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Join Our Tea Community</h2>
+                <p class="text-white/90 mb-8">Subscribe to our newsletter for exclusive offers, brewing tips, and early access to new products.</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-button flex-grow border-none focus:outline-none focus:ring-2 focus:ring-primary text-gray-800">
+                    <button class="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-button font-medium shadow-md transition-colors whitespace-nowrap">Subscribe</button>
+                </div>
+                <p class="text-white/70 text-sm mt-4">By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <a href="#" class="font-['Pacifico'] text-3xl text-white mb-6 inline-block">logo</a>
+                    <p class="text-gray-400 mb-6">Premium tea sourced directly from the finest estates in India, delivering exceptional quality and flavor in every cup.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shop All</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tea Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Bulk Orders</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Brewing Tips</a></li>
+                    </ul>
+                </div>
+
+                <!-- Policies -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Policies</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Return & Refund</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">123 Tea Garden Road, Assam, India - 786001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@teahaven.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span class="text-gray-400">Mon-Sat: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Payment Methods & Copyright -->
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Tea Haven. All rights reserved.</p>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-500 text-sm">We Accept:</span>
+                    <div class="flex space-x-3">
+                        <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+                            <i class="ri-visa-fill ri-lg"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+                            <i class="ri-mastercard-fill ri-lg"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+                            <i class="ri-paypal-fill ri-lg"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+                            <i class="ri-amazon-pay-fill ri-lg"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+                            <i class="ri-apple-fill ri-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent -->
+    <div class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md bg-white p-4 rounded-lg shadow-lg z-50 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+            <p class="text-gray-800 text-sm">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded-button text-sm whitespace-nowrap">Decline</button>
+            <button class="px-4 py-2 bg-primary text-white rounded-button text-sm whitespace-nowrap">Accept All</button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="fixed bottom-20 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90" id="backToTop">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <!-- Chat Support Widget -->
+    <button class="fixed bottom-6 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90">
+        <i class="ri-customer-service-2-line ri-lg"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
